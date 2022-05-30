@@ -34,6 +34,10 @@ void ABaseMovingPlatform::BeginPlay()
     Super::BeginPlay();
 
     StartLocation = this->GetActorLocation();
+
+#if WITH_EDITOR
+    UE_LOG(LogTemp, Display, TEXT("%s: Begin Play"), *this->GetActorLabel());
+#endif
 }
 
 void ABaseMovingPlatform::Tick(float inDeltaTime)
@@ -48,6 +52,10 @@ void ABaseMovingPlatform::Tick(float inDeltaTime)
     DistanceMoved = FVector::Distance(StartLocation, CurrentLocation);
     if (DistanceMoved > MaximumMoveDistance)
     {
+        float OvershootDistance = DistanceMoved - MaximumMoveDistance;
+#if WITH_EDITOR
+        UE_LOG(LogTemp, Display, TEXT("%s overshot by: %f"), *this->GetActorLabel(), OvershootDistance);
+#endif
         FVector MoveDirection = PlatformVelocity.GetSafeNormal();
         StartLocation += (MoveDirection * MaximumMoveDistance);
         this->SetActorLocation(StartLocation);
