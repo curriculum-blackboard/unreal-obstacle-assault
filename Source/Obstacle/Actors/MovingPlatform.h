@@ -45,30 +45,9 @@ protected:
 
 #pragma region Platform
     UPROPERTY(EditAnywhere)
-    int32 MyInteger = 99;
+    FVector MyVector = FVector(1.0f, 2.0f, 3.0f);
 
     UPROPERTY(EditAnywhere)
-    int32 InputA = 0;
-
-    UPROPERTY(EditAnywhere)
-    int32 InputB = 0;
-
-    UPROPERTY(EditAnywhere)
-    int32 APlusB = 0;
-
-    UPROPERTY(EditAnywhere)
-    float MyFloat = 0.99f;
-
-    UPROPERTY(EditAnywhere)
-    float InputAFloat = 0;
-
-    UPROPERTY(EditAnywhere)
-    float InputBFloat = 0;
-
-    UPROPERTY(EditAnywhere)
-    float APlusBFloat = 0;
-
-    UPROPERTY(EditAnywhere)
-    bool MyBoolean = true;
+    float MyX = 0.0f;
 #pragma endregion
 };

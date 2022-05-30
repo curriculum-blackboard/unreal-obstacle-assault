@@ -32,16 +32,14 @@ AMovingPlatform::AMovingPlatform()
 void AMovingPlatform::BeginPlay()
 {
     Super::BeginPlay();
-
-    MyInteger = 9;
-
-    APlusB = InputA + InputB;
-
-    APlusBFloat = InputAFloat + InputBFloat;
 }
 
 void AMovingPlatform::Tick(float inDeltaTime)
 {
     Super::Tick(inDeltaTime);
+
+    MyX = MyVector.X;
+
+    MyVector.Y = MyX;
 }
 #pragma endregion
