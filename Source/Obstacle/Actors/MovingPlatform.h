@@ -48,6 +48,9 @@ protected:
     int32 MyInteger = 99;
 
     UPROPERTY(EditAnywhere)
+    int32 MyInteger2 = 99;
+
+    UPROPERTY(EditAnywhere)
     float MyFloat = 0.99f;
 
     UPROPERTY(EditAnywhere)
