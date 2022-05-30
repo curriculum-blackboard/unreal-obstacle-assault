@@ -1,0 +1,50 @@
+## Core options
+root = true  
+
+## Baseline options
+[*]  
+charset = utf-8  
+indent_style = space  
+indent_size = 4  
+tab_width = 4  
+end_of_line = lf  
+insert_final_newline = true  
+trim_trailing_whitespace = true  
+
+## Visual Studio files
+[*.sln]  
+
+## MSBuild files
+[*.{csproj,vbproj,vcxproj,vcxproj.filters,proj,projitems,shproj,fsproj,target,props}]  
+
+## XML config files
+[*.{xml,config,props,targets,nuspec,resx,ruleset,vsixmanifest,vsct}]  
+
+## Python files
+[*.py]  
+
+## JSON files
+[*.{json,json5}]  
+
+## YAML files
+[*.{yml,yaml}]  
+indent_style = space  
+indent_size = 2  
+
+## Markdown files
+[*.md]  
+trim_trailing_whitespace = false  
+
+## Web files
+[*.{htm,html,js,ts,tsx,css,sass,scss,less,svg,vue}]  
+
+## Batch files
+[*.{cmd,bat}]  
+end_of_line = crlf  
+
+## Bash files
+[*.sh]  
+
+## Code files
+[*.{cs,csx,vb,vbx}]  
+charset = utf-8-bom  
