@@ -1,0 +1,17 @@
+{
+    "FileVersion": 3,
+    "Version": 1,
+    "VersionName": "5.0.1",
+    "FriendlyName": "Learning Kit",
+    "Description": "Learning Kit content for projects using Unreal Engine, developed by Epic Games.",
+    "Category": "Content",
+    "CreatedBy": "Epic Games",
+    "CreatedByURL": "https://www.epicgames.com/",
+    "DocsURL": "https://docs.unrealengine.com/",
+    "SupportURL": "https://issues.unrealengine.com/",
+    "EnabledByDefault": true,
+    "CanContainContent": true,
+    "IsBetaVersion": false,
+    "IsExperimentalVersion": false,
+    "Installed": false
+}

@@ -1,0 +1,16 @@
+{
+    "FileVersion": 3,
+    "Version": 1,
+    "VersionName": "5.0.1",
+    "FriendlyName": "Stylized Character Kit",
+    "Description": "Stylized Character Kit content for projects using Unreal Engine, developed by ROCKETARTS.",
+    "Category": "Content",
+    "CreatedBy": "ROCKETARTS",
+    "CreatedByURL": "https://twitter.com/rcktlx",
+    "SupportURL": "https://discord.gg/UHsp8GAXQP/",
+    "EnabledByDefault": true,
+    "CanContainContent": true,
+    "IsBetaVersion": false,
+    "IsExperimentalVersion": false,
+    "Installed": false
+}
