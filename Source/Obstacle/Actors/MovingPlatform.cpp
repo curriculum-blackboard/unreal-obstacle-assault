@@ -32,6 +32,8 @@ AMovingPlatform::AMovingPlatform()
 void AMovingPlatform::BeginPlay()
 {
     Super::BeginPlay();
+
+    StartLocation = this->GetActorLocation();
 }
 
 void AMovingPlatform::Tick(float inDeltaTime)
@@ -43,7 +45,7 @@ void AMovingPlatform::Tick(float inDeltaTime)
     CurrentLocation += PlatformVelocity * inDeltaTime;
     this->SetActorLocation(CurrentLocation);
     // Send platform back once it reaches the destination
-        // Check distance the platform has moved
+    DistanceMoved = FVector::Distance(StartLocation, CurrentLocation);
         // Check if the platform has moved far enough
         // Reverse the direction of movement
 }

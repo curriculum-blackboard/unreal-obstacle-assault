@@ -47,5 +47,10 @@ protected:
 public:
     UPROPERTY(EditAnywhere, Category = "Moving Platform")
     FVector PlatformVelocity = FVector(100.f, 0.0f, 0.0f);
+
+    UPROPERTY(VisibleAnywhere, Category = "Moving Platform")
+    float DistanceMoved = -1.0f;
+
+    FVector StartLocation;
 #pragma endregion
 };
