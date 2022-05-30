@@ -53,22 +53,29 @@ void ABaseMovingPlatform::Tick(float inDeltaTime)
 #pragma region Moving Platform
 void ABaseMovingPlatform::MovePlatform(float inDeltaTime)
 {
-    FVector CurrentLocation = this->GetActorLocation();
-    CurrentLocation += MoveVelocity * inDeltaTime;
-    this->SetActorLocation(CurrentLocation);
-
-    DistanceMoved = FVector::Distance(StartLocation, CurrentLocation);
-    if (DistanceMoved > MaximumMoveDistance)
+    if (this->ShouldPlatformReturn())
     {
-        float OvershootDistance = DistanceMoved - MaximumMoveDistance;
-#if WITH_EDITOR
-        UE_LOG(LogTemp, Display, TEXT("%s overshot by: %f"), *this->GetActorLabel(), OvershootDistance);
-#endif
         FVector MoveDirection = MoveVelocity.GetSafeNormal();
         StartLocation += (MoveDirection * MaximumMoveDistance);
         this->SetActorLocation(StartLocation);
         MoveVelocity = -MoveVelocity;
     }
+    else
+    {
+        FVector CurrentLocation = this->GetActorLocation();
+        CurrentLocation += MoveVelocity * inDeltaTime;
+        this->SetActorLocation(CurrentLocation);
+    }
+}
+
+bool ABaseMovingPlatform::ShouldPlatformReturn()
+{
+    return this->GetDistanceMoved() > MaximumMoveDistance;
+}
+
+float ABaseMovingPlatform::GetDistanceMoved()
+{
+    return FVector::Distance(StartLocation, this->GetActorLocation());
 }
 
 void ABaseMovingPlatform::RotatePlatform(float inDeltaTime)

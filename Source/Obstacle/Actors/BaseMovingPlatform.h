@@ -48,9 +48,6 @@ private:
     UPROPERTY(EditAnywhere, Category = "Moving Platform")
     FVector MoveVelocity = FVector(100.f, 0.0f, 0.0f);
 
-    UPROPERTY(VisibleAnywhere, Category = "Moving Platform")
-    float DistanceMoved = -1.0f;
-
     UPROPERTY(EditAnywhere, Category = "Moving Platform")
     float MaximumMoveDistance = 500.0f;
 
@@ -58,6 +55,9 @@ private:
 
 private:
     void MovePlatform(float inDeltaTime);
+    bool ShouldPlatformReturn();
+    float GetDistanceMoved();
+
     void RotatePlatform(float inDeltaTime);
 #pragma endregion
 };
