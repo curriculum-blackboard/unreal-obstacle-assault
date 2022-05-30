@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## [1.0.0](https://github.com/curriculum-blackboard/unreal-obstacle-assault/compare/0.1.0...1.0.0) - 2022-05-31
+
 -   Course Content ([#4](https://github.com/curriculum-blackboard/unreal-obstacle-assault/pull/4))
     -   Lecture 43. Compiling a C++ Project ([8ffaa21](https://github.com/curriculum-blackboard/unreal-obstacle-assault/commit/8ffaa21))
     -   Lecture 44. UPROPERTY Variables ([7ad616e](https://github.com/curriculum-blackboard/unreal-obstacle-assault/commit/7ad616e))
