@@ -20,40 +20,38 @@
 ** SOFTWARE.
 */
 
-#pragma once
+#include "Actors/BaseMovingPlatform.h"
 
-#include "CoreMinimal.h"
-
-#include "GameFramework/Actor.h"
-
-#include "MovingPlatform.generated.h"
-
-
-UCLASS()
-class OBSTACLE_API AMovingPlatform : public AActor
-{
-    GENERATED_BODY()
 
 #pragma region Unreal
-public:
-    AMovingPlatform();
+ABaseMovingPlatform::ABaseMovingPlatform()
+{
+    PrimaryActorTick.bCanEverTick = true;
+}
 
-protected:
-    virtual void BeginPlay() override;
-    virtual void Tick(float inDeltaTime) override;
+void ABaseMovingPlatform::BeginPlay()
+{
+    Super::BeginPlay();
+
+    StartLocation = this->GetActorLocation();
+}
+
+void ABaseMovingPlatform::Tick(float inDeltaTime)
+{
+    Super::Tick(inDeltaTime);
+
+    // Move platform forwards
+    FVector CurrentLocation = this->GetActorLocation();
+    CurrentLocation += PlatformVelocity * inDeltaTime;
+    this->SetActorLocation(CurrentLocation);
+    // Send platform back once it reaches the destination
+    DistanceMoved = FVector::Distance(StartLocation, CurrentLocation);
+    if (DistanceMoved > MaximumMoveDistance)
+    {
+        FVector MoveDirection = PlatformVelocity.GetSafeNormal();
+        StartLocation += (MoveDirection * MaximumMoveDistance);
+        this->SetActorLocation(StartLocation);
+        PlatformVelocity = -PlatformVelocity;
+    }
+}
 #pragma endregion
-
-#pragma region Moving Platform
-public:
-    UPROPERTY(EditAnywhere, Category = "Moving Platform")
-    FVector PlatformVelocity = FVector(100.f, 0.0f, 0.0f);
-
-    UPROPERTY(VisibleAnywhere, Category = "Moving Platform")
-    float DistanceMoved = -1.0f;
-
-    UPROPERTY(EditAnywhere, Category = "Moving Platform")
-    float MaximumMoveDistance = 500.0f;
-
-    FVector StartLocation;
-#pragma endregion
-};
