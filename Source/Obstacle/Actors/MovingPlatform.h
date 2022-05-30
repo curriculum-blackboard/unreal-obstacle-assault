@@ -42,4 +42,15 @@ protected:
     virtual void BeginPlay() override;
     virtual void Tick(float inDeltaTime) override;
 #pragma endregion
+
+#pragma region Platform
+    UPROPERTY(EditAnywhere)
+    int32 MyInteger = 99;
+
+    UPROPERTY(EditAnywhere)
+    float MyFloat = 0.99f;
+
+    UPROPERTY(EditAnywhere)
+    bool MyBoolean = true;
+#pragma endregion
 };
