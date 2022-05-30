@@ -48,10 +48,25 @@ protected:
     int32 MyInteger = 99;
 
     UPROPERTY(EditAnywhere)
-    int32 MyInteger2 = 99;
+    int32 InputA = 0;
+
+    UPROPERTY(EditAnywhere)
+    int32 InputB = 0;
+
+    UPROPERTY(EditAnywhere)
+    int32 APlusB = 0;
 
     UPROPERTY(EditAnywhere)
     float MyFloat = 0.99f;
+
+    UPROPERTY(EditAnywhere)
+    float InputAFloat = 0;
+
+    UPROPERTY(EditAnywhere)
+    float InputBFloat = 0;
+
+    UPROPERTY(EditAnywhere)
+    float APlusBFloat = 0;
 
     UPROPERTY(EditAnywhere)
     bool MyBoolean = true;
