@@ -46,7 +46,10 @@ void AMovingPlatform::Tick(float inDeltaTime)
     this->SetActorLocation(CurrentLocation);
     // Send platform back once it reaches the destination
     DistanceMoved = FVector::Distance(StartLocation, CurrentLocation);
-        // Check if the platform has moved far enough
-        // Reverse the direction of movement
+    if (DistanceMoved > MaximumMoveDistance)
+    {
+        StartLocation = CurrentLocation;
+        PlatformVelocity = -PlatformVelocity;
+    }
 }
 #pragma endregion

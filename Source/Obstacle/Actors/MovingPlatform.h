@@ -51,6 +51,9 @@ public:
     UPROPERTY(VisibleAnywhere, Category = "Moving Platform")
     float DistanceMoved = -1.0f;
 
+    UPROPERTY(EditAnywhere, Category = "Moving Platform")
+    float MaximumMoveDistance = 500.0f;
+
     FVector StartLocation;
 #pragma endregion
 };
