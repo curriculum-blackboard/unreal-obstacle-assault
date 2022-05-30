@@ -42,4 +42,10 @@ protected:
     virtual void BeginPlay() override;
     virtual void Tick(float inDeltaTime) override;
 #pragma endregion
+
+#pragma region Moving Platform
+public:
+    UPROPERTY(EditAnywhere, Category = "Moving Platform")
+    FVector PlatformVelocity = FVector(100.f, 0.0f, 0.0f);
+#pragma endregion
 };

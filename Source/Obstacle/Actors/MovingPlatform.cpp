@@ -40,7 +40,7 @@ void AMovingPlatform::Tick(float inDeltaTime)
 
     // Move platform forwards
     FVector CurrentLocation = this->GetActorLocation();
-    CurrentLocation.X += 1.0f;
+    CurrentLocation += PlatformVelocity * inDeltaTime;
     this->SetActorLocation(CurrentLocation);
     // Send platform back once it reaches the destination
         // Check distance the platform has moved
