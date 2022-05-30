@@ -55,8 +55,8 @@ private:
 
 private:
     void MovePlatform(float inDeltaTime);
-    bool ShouldPlatformReturn();
-    float GetDistanceMoved();
+    bool ShouldPlatformReturn() const;
+    float GetDistanceMoved() const;
 
     void RotatePlatform(float inDeltaTime);
 #pragma endregion

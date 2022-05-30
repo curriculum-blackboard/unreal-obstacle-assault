@@ -68,12 +68,12 @@ void ABaseMovingPlatform::MovePlatform(float inDeltaTime)
     }
 }
 
-bool ABaseMovingPlatform::ShouldPlatformReturn()
+bool ABaseMovingPlatform::ShouldPlatformReturn() const
 {
     return this->GetDistanceMoved() > MaximumMoveDistance;
 }
 
-float ABaseMovingPlatform::GetDistanceMoved()
+float ABaseMovingPlatform::GetDistanceMoved() const
 {
     return FVector::Distance(StartLocation, this->GetActorLocation());
 }
