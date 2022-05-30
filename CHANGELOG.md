@@ -12,3 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     -   Added Contributing guidelines ([372abc0](https://github.com/curriculum-blackboard/unreal-obstacle-assault/commit/372abc0))
     -   Added Code Configuration files ([2b52361](https://github.com/curriculum-blackboard/unreal-obstacle-assault/commit/2b52361))
     -   Added Release workflow ([385a7c2](https://github.com/curriculum-blackboard/unreal-obstacle-assault/commit/385a7c2))
+
+-   Project Setup ([#2](https://github.com/curriculum-blackboard/unreal-obstacle-assault/pull/2))
+    -   Added Project files ([e78c376](https://github.com/curriculum-blackboard/unreal-obstacle-assault/commit/e78c376))
+    -   Added Learning Kit plugin ([6bd3baa](https://github.com/curriculum-blackboard/unreal-obstacle-assault/commit/6bd3baa))
+    -   Added Stylized Character Kit plugin ([f2ce3b7](https://github.com/curriculum-blackboard/unreal-obstacle-assault/commit/f2ce3b7))
