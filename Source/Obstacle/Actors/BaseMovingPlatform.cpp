@@ -80,8 +80,8 @@ float ABaseMovingPlatform::GetDistanceMoved() const
 
 void ABaseMovingPlatform::RotatePlatform(float inDeltaTime)
 {
-#if WITH_EDITOR
-        UE_LOG(LogTemp, Display, TEXT("%s is rotating"), *this->GetActorLabel());
-#endif
+    FRotator CurrentRotation = this->GetActorRotation();
+    CurrentRotation += RotateVelocity * inDeltaTime;
+    this->SetActorRotation(CurrentRotation);
 }
 #pragma endregion

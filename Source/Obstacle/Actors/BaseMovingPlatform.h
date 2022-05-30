@@ -45,11 +45,14 @@ protected:
 
 #pragma region Moving Platform
 private:
-    UPROPERTY(EditAnywhere, Category = "Moving Platform")
+    UPROPERTY(EditAnywhere, Category = "Movement")
     FVector MoveVelocity = FVector(100.f, 0.0f, 0.0f);
 
-    UPROPERTY(EditAnywhere, Category = "Moving Platform")
+    UPROPERTY(EditAnywhere, Category = "Movement")
     float MaximumMoveDistance = 500.0f;
+
+    UPROPERTY(EditAnywhere, Category = "Rotation")
+    FRotator RotateVelocity = FRotator::ZeroRotator;
 
     FVector StartLocation;
 
