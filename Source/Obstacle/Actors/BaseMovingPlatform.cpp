@@ -44,11 +44,19 @@ void ABaseMovingPlatform::Tick(float inDeltaTime)
 {
     Super::Tick(inDeltaTime);
 
-    // Move platform forwards
+    this->MovePlatform(inDeltaTime);
+
+    this->RotatePlatform(inDeltaTime);
+}
+#pragma endregion
+
+#pragma region Moving Platform
+void ABaseMovingPlatform::MovePlatform(float inDeltaTime)
+{
     FVector CurrentLocation = this->GetActorLocation();
-    CurrentLocation += PlatformVelocity * inDeltaTime;
+    CurrentLocation += MoveVelocity * inDeltaTime;
     this->SetActorLocation(CurrentLocation);
-    // Send platform back once it reaches the destination
+
     DistanceMoved = FVector::Distance(StartLocation, CurrentLocation);
     if (DistanceMoved > MaximumMoveDistance)
     {
@@ -56,10 +64,17 @@ void ABaseMovingPlatform::Tick(float inDeltaTime)
 #if WITH_EDITOR
         UE_LOG(LogTemp, Display, TEXT("%s overshot by: %f"), *this->GetActorLabel(), OvershootDistance);
 #endif
-        FVector MoveDirection = PlatformVelocity.GetSafeNormal();
+        FVector MoveDirection = MoveVelocity.GetSafeNormal();
         StartLocation += (MoveDirection * MaximumMoveDistance);
         this->SetActorLocation(StartLocation);
-        PlatformVelocity = -PlatformVelocity;
+        MoveVelocity = -MoveVelocity;
     }
+}
+
+void ABaseMovingPlatform::RotatePlatform(float inDeltaTime)
+{
+#if WITH_EDITOR
+        UE_LOG(LogTemp, Display, TEXT("%s is rotating"), *this->GetActorLabel());
+#endif
 }
 #pragma endregion

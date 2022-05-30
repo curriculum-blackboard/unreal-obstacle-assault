@@ -44,9 +44,9 @@ protected:
 #pragma endregion
 
 #pragma region Moving Platform
-public:
+private:
     UPROPERTY(EditAnywhere, Category = "Moving Platform")
-    FVector PlatformVelocity = FVector(100.f, 0.0f, 0.0f);
+    FVector MoveVelocity = FVector(100.f, 0.0f, 0.0f);
 
     UPROPERTY(VisibleAnywhere, Category = "Moving Platform")
     float DistanceMoved = -1.0f;
@@ -55,5 +55,9 @@ public:
     float MaximumMoveDistance = 500.0f;
 
     FVector StartLocation;
+
+private:
+    void MovePlatform(float inDeltaTime);
+    void RotatePlatform(float inDeltaTime);
 #pragma endregion
 };
