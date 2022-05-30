@@ -42,9 +42,4 @@ protected:
     virtual void BeginPlay() override;
     virtual void Tick(float inDeltaTime) override;
 #pragma endregion
-
-#pragma region Platform
-    UPROPERTY(EditAnywhere)
-    FVector MyVector = FVector(1.0f, 2.0f, 3.0f);
-#pragma endregion
 };
