@@ -46,8 +46,5 @@ protected:
 #pragma region Platform
     UPROPERTY(EditAnywhere)
     FVector MyVector = FVector(1.0f, 2.0f, 3.0f);
-
-    UPROPERTY(EditAnywhere)
-    float MyX = 0.0f;
 #pragma endregion
 };

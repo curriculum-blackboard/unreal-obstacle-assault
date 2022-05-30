@@ -38,8 +38,6 @@ void AMovingPlatform::Tick(float inDeltaTime)
 {
     Super::Tick(inDeltaTime);
 
-    MyX = MyVector.X;
-
-    MyVector.Y = MyX;
+    this->SetActorLocation(MyVector);
 }
 #pragma endregion
